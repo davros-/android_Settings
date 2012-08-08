@@ -16,6 +16,8 @@
 
 package com.android.settings;
 
+import android.app.ActivityManagerNative;
+
 import com.android.settings.bluetooth.DockEventReceiver;
 
 import android.app.AlertDialog;
@@ -82,6 +84,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOCK_AUDIO_SETTINGS = "dock_audio";
     private static final String KEY_DOCK_SOUNDS = "dock_sounds";
     private static final String KEY_DOCK_AUDIO_MEDIA_ENABLED = "dock_audio_media_enabled";
+    private static final String KEY_SAFE_HEADSET_RESTORE = "safe_headset_restore";
     private static final String KEY_QUIET_HOURS = "quiet_hours";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
@@ -111,6 +114,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mHeadsetConnectPlayer;
     private Preference mRingtonePreference;
     private Preference mNotificationPreference;
+    private CheckBoxPreference mSafeHeadsetRestore;
     private PreferenceScreen mQuietHours;
     private CheckBoxPreference mVolumeAdjustSounds;
 
@@ -189,6 +193,11 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else {
             mQuietHours.setSummary(getString(R.string.quiet_hours_summary));
         }
+
+        mSafeHeadsetRestore = (CheckBoxPreference) findPreference(KEY_SAFE_HEADSET_RESTORE);
+        mSafeHeadsetRestore.setPersistent(false);
+        mSafeHeadsetRestore.setChecked(Settings.System.getInt(resolver,
+                Settings.System.SAFE_HEADSET_VOLUME_RESTORE, 1) != 0);
 
         mVibrateWhenRinging = (CheckBoxPreference) findPreference(KEY_VIBRATE);
         mVibrateWhenRinging.setPersistent(false);
@@ -412,7 +421,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent
             return false;
-
+        } else if (preference == mSafeHeadsetRestore) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SAFE_HEADSET_VOLUME_RESTORE,
+                    mSafeHeadsetRestore.isChecked() ? 1 : 0);
         } else if (preference == mDockAudioSettings) {
             int dockState = mDockIntent != null
                     ? mDockIntent.getIntExtra(Intent.EXTRA_DOCK_STATE, 0)

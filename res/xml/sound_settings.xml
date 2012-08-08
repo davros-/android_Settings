@@ -51,6 +51,28 @@
             android:fragment="com.android.settings.cyanogenmod.QuietHours"
             android:title="@string/quiet_hours_title" />
 
+    <!-- Volume Safe Set -->
+     <CheckBoxPreference
+            android:key="safe_headset_restore"
+            android:title="@string/safe_headset_restore_title"
+            android:summary="@string/safe_headset_restore_summary"
+            android:defaultValue="true" />
+
+    <!-- Volume Rocker Wake -->
+    <CheckBoxPreference
+        android:key="pref_volume_wake"
+        android:title="@string/pref_volume_wake_title"
+        android:summary="@string/pref_volume_wake_summary"
+        android:persistent="false" />
+
+    <!-- Volume Rocker music control -->
+    <CheckBoxPreference
+        android:key="volbtn_music_controls"
+        android:title="@string/volbtn_music_controls_title"
+        android:summary="@string/volbtn_music_controls_summary"
+        android:persistent="false" />
+>>>>>>> bf8a683... Add safe headset volume check (2/2) Credit: CyanogenMod
+
     <PreferenceCategory
             android:key="category_calls_and_notification"
             android:title="@string/sound_category_call_ringtone_vibrate_title"/>
