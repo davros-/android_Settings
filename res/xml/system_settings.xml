@@ -24,8 +24,6 @@
         android:fragment="com.android.settings.cyanogenmod.PowerWidget"
         android:title="@string/notification_drawer_title" />
 
-<<<<<<< HEAD
-=======
     <com.android.settings.WarnedListPreference
         android:key="font_size"
         android:title="@string/title_font_size"
@@ -40,5 +38,4 @@
         android:fragment="com.android.settings.cyanogenmod.PowerMenu" />
 
 
->>>>>>> da35262... Settings: Forward port Power menu options
 </PreferenceScreen>
