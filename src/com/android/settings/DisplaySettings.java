@@ -18,11 +18,6 @@ package com.android.settings;
 
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
-<<<<<<< HEAD
-import android.app.ActivityManagerNative;
-import android.app.Dialog;
-=======
->>>>>>> 40a96a2... Setings: Forward port Display Rotation settings
 import android.app.admin.DevicePolicyManager;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
@@ -73,11 +68,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private DisplayManager mDisplayManager;
 
-<<<<<<< HEAD
-    private CheckBoxPreference mAccelerometer;
-    private WarnedListPreference mFontSizePref;
-=======
->>>>>>> 40a96a2... Setings: Forward port Display Rotation settings
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
     private PreferenceScreen mDisplayRotationPreference;
