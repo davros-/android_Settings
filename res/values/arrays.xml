@@ -964,6 +964,7 @@
         <item>5000</item>
     </string-array>
 
+<<<<<<< HEAD
     <!-- Arrays required by Notification Widgets. -->
     <string-array name="entries_brightness_widget" formatted="false" translatable="false">
         <item>@string/cm_brightness_mode_auto</item>
@@ -1062,4 +1063,7 @@
     </string-array>
 
     <!-- **** CYANOGENMOD EDITS END **** -->
+=======
+    <!-- **** CYANOGENMOD AND PROJECT ELITE EDITS END **** -->
+>>>>>>> a196414... remove cm power widgets
 </resources>
