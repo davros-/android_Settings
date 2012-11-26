@@ -32,7 +32,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
@@ -43,7 +42,7 @@ import com.android.settings.cyanogenmod.DisplayRotation;
 import java.util.ArrayList;
 
 public class DisplaySettings extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, OnPreferenceClickListener {
+        Preference.OnPreferenceChangeListener {
     private static final String TAG = "DisplaySettings";
 
     /** If there is no setting in the provider, use this. */
@@ -63,8 +62,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_270 = "270";
     private static final String ROTATION_ANGLE_DELIM = ", ";
     private static final String ROTATION_ANGLE_DELIM_FINAL = " & ";
-
-    private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private DisplayManager mDisplayManager;
 
@@ -128,9 +125,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         updateTimeoutPreferenceDescription(currentTimeout);
         updateDisplayRotationPreferenceDescription();
 
-        mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
-        mFontSizePref.setOnPreferenceChangeListener(this);
-        mFontSizePref.setOnPreferenceClickListener(this);
         mNotificationPulse = (PreferenceScreen) findPreference(KEY_NOTIFICATION_PULSE);
         if (mNotificationPulse != null) {
             if (!getResources().getBoolean(com.android.internal.R.bool.config_intrusiveNotificationLed)) {
@@ -379,9 +373,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
         }
-        if (KEY_FONT_SIZE.equals(key)) {
-            writeFontSizePreference(objValue);
-        }
 
         return true;
     }
@@ -397,16 +388,4 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
     };
 
-    @Override
-    public boolean onPreferenceClick(Preference preference) {
-        if (preference == mFontSizePref) {
-            if (Utils.hasMultipleUsers(getActivity())) {
-                showDialog(DLG_GLOBAL_CHANGE_WARNING);
-                return true;
-            } else {
-                mFontSizePref.click();
-            }
-        }
-        return false;
-    }
 }
