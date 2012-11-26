@@ -4733,4 +4733,5 @@
     <string name="advanced_settings_title">Advanced</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+    <string name="qs_title">Quick Settings Control</string>
 </resources>
