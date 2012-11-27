@@ -1435,13 +1435,7 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-<<<<<<< HEAD
-        <!-- CyanogenMod activities Start -->
-        <activity android:name=".cyanogenmod.PowerWidget" />
-
-=======
-        <!-- CyanogenMod and Project Elite activities Start -->
->>>>>>> a196414... remove cm power widgets
+        <!-- CyanogenMod and Droid Concepts activities Start -->
         <activity android:name=".cyanogenmod.SystemSettings" />
 
         <activity android:name=".cyanogenmod.PerformanceSettings" />
