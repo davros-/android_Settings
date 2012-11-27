@@ -89,7 +89,6 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
     private static final String KEY_HEADSET_CONNECT_PLAYER = "headset_connect_player";
     private static final String KEY_VOLUME_ADJUST_SOUNDS = "volume_adjust_sounds";
-
     private static final String SILENT_MODE_OFF = "off";
     private static final String SILENT_MODE_VIBRATE = "vibrate";
     private static final String SILENT_MODE_MUTE = "mute";
@@ -463,6 +462,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mHeadsetConnectPlayer) {
             Settings.System.putInt(getContentResolver(), Settings.System.HEADSET_CONNECT_PLAYER,
                     mHeadsetConnectPlayer.isChecked() ? 1 : 0);
+
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);
