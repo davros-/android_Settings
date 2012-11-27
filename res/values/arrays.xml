@@ -773,11 +773,7 @@
         <item>Always allow</item>
     </string-array>
 
-<<<<<<< HEAD
-    <!-- **** CYANOGENMOD EDITS START **** -->
-=======
-    <!-- **** CYANOGENMOD/PROJECT ELITE EDITS START **** -->
->>>>>>> f2dcb1a... Forward port Status Bar settings
+    <!-- **** CYANOGENMOD/Droid Concepts EDITS START **** -->
 
     <!-- Volume Overlay options. -->
     <string-array name="volume_overlay_entries">
