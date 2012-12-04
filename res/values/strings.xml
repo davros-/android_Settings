@@ -4818,4 +4818,7 @@
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
     <string name="qs_title">Quick Settings Control</string>
+
+    <string name="notification_convert_sound_to_vibration_title">Notification conversion</string>
+    <string name="notification_convert_sound_to_vibration_summary">Sounds to vibrations during vibrate mode</string>
 </resources>
