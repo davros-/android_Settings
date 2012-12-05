@@ -1092,9 +1092,6 @@
         <item>2</item>
     </string-array>
 
-<<<<<<< HEAD
-    <!-- **** CYANOGENMOD and Droid Concepts EDITS END **** -->
-=======
     <!-- Generic toggle overlay. Should be set per device in overlay -->
     <string-array name="available_toggles_entries" translatable="false">
         <item>USER</item>
@@ -1159,6 +1156,5 @@
         <item>5</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD/ProjectElite EDITS END **** -->
->>>>>>> 576f7a4... port of AOKP quicksettings
+    <!-- **** CYANOGENMOD/Droid Concepts EDITS END **** -->
 </resources>
