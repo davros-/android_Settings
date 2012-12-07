@@ -4288,6 +4288,8 @@
     <string name="selinux_status_disabled">Disabled</string>
     <string name="selinux_status_permissive">Permissive</string>
     <string name="selinux_status_enforcing">Enforcing</string>
+    <!-- Performance Settings : Disable bootanimation -->
+    <string name="pref_disable_bootanimation_title">Disable boot animation</string>
 
     <!-- User settings -->
     <skip/>
