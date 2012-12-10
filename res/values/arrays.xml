@@ -847,6 +847,7 @@
         <item>2</item>
     </string-array>
 
+<<<<<<< HEAD
     <string-array name="lockscreen_delay_entries" translatable="false">
         <item>@string/slide_lock_delay_none</item>
         <item>@string/slide_lock_delay_1s</item>
@@ -923,6 +924,8 @@
         <item>@*android:drawable/ic_lockscreen_twitter_normal</item>
     </string-array>
 
+=======
+>>>>>>> parent of 9d54873... Settings: Forward port Slider shortcuts
     <!-- Profile mode options. -->
     <string-array name="profile_entries">
         <item>On</item>
