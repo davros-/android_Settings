@@ -59,7 +59,9 @@
         android:icon="@drawable/empty_icon" />
 
     <!-- INTERFACE -->
-    <header android:title="@string/header_category_interface" />
+    <header 
+        android:icon="@drawable/ic_settings_system"
+        android:title="@string/header_category_interface" />
 
  <!-- System -->
     <header
