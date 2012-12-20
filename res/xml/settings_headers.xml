@@ -60,7 +60,7 @@
 
     <!-- INTERFACE -->
     <header 
-        android:icon="@drawable/ic_settings_system"
+        android:icon="@drawable/ic_settings_DC"
         android:title="@string/header_category_interface" />
 
  <!-- System -->
