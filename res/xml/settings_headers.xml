@@ -59,8 +59,7 @@
         android:icon="@drawable/empty_icon" />
 
     <!-- INTERFACE -->
-    <header 
-        android:id="@+id/interface_section"
+    <header android:id="@+id/interface_section"
         android:icon="@drawable/ic_settings_dc"
         android:title="@string/header_category_interface" />
 
