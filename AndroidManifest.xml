@@ -1574,7 +1574,6 @@
             </intent-filter>
         </receiver>
 
-<<<<<<< HEAD
         <activity
             android:name=".aokp.StatusBarBattery"
             android:label="@string/title_statusbar_battery" >
@@ -1585,9 +1584,7 @@
             </intent-filter>
         </activity>
 
-=======
         <service android:name=".projectelite.ExternalCommandService"
             android:exported="false" />
->>>>>>> 26a0452... fix permissions for fast charge toggle
     </application>
 </manifest>
