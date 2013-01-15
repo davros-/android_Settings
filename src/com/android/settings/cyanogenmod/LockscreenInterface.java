@@ -103,8 +103,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             return true;
 	} else if (preference == mSeeThrough) {
 	   Settings.System.putInt(mContext.getContentResolver(),
-	           Settings.System.LOCKSCREEN_SEE_THROUGH, mSeeThrough.isChecked() 
-                   ? 1 : 0);
+	   Settings.System.LOCKSCREEN_SEE_THROUGH, mSeeThrough.isChecked() ? 1 : 0);
 	   return true;
         } else if (preference == mMaximizeWidgets) {
             boolean value = (Boolean) objValue;
