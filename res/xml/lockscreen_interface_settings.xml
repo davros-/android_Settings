@@ -34,11 +34,6 @@
         android:entryValues="@array/lockscreen_battery_status_values"
         android:defaultValue="0" />
 
-    <CheckBoxPreference
-        android:key="see_through"
-        android:title="@string/see_through_title"
-        android:summary="@string/see_through_summary" />
-
      <CheckBoxPreference
         android:key="lockscreen_maximize_widgets"
         android:persistent="false"

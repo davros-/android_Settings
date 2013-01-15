@@ -16,7 +16,6 @@
 package com.android.settings.cyanogenmod;
 
 import android.content.ContentResolver;
-import android.content.Context;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -32,16 +31,12 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     Preference.OnPreferenceChangeListener {
 
     private static final String KEY_ALWAYS_BATTERY_PREF = "lockscreen_battery_status";
-    public static final String KEY_SEE_TRHOUGH = "see_through";
     private static final String KEY_LOCKSCREEN_MAXIMIZE_WIDGETS = "lockscreen_maximize_widgets";
     private static final String PREF_LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS = "lockscreen_hide_initial_page_hints";
 
     private ListPreference mBatteryStatus;
-    private CheckBoxPreference mSeeThrough;
     private CheckBoxPreference mMaximizeWidgets;
     private CheckBoxPreference mLockscreenHideInitialPageHints;
-
-    private Context mContext;
 
     public boolean hasButtons() {
         return !getResources().getBoolean(com.android.internal.R.bool.config_showNavigationBar);
@@ -52,11 +47,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-        mContext = getActivity();
-
-        mSeeThrough = (CheckBoxPreference) prefSet.findPreference(KEY_SEE_TRHOUGH);
 
         mBatteryStatus = (ListPreference) findPreference(KEY_ALWAYS_BATTERY_PREF);
         if (mBatteryStatus != null) {
@@ -101,10 +91,6 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, value);
             mBatteryStatus.setSummary(mBatteryStatus.getEntries()[index]);
             return true;
-	} else if (preference == mSeeThrough) {
-	   Settings.System.putInt(mContext.getContentResolver(),
-	   Settings.System.LOCKSCREEN_SEE_THROUGH, mSeeThrough.isChecked() ? 1 : 0);
-	   return true;
         } else if (preference == mMaximizeWidgets) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS, value ? 1 : 0);
