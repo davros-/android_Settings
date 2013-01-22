@@ -1468,6 +1468,8 @@
 
         <activity android:name=".aokp.StatusBarBattery" />
 
+        <activity android:name=".demented.CarrierLabel" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
@@ -1586,7 +1588,20 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <service android:name=".projectelite.ExternalCommandService"
             android:exported="false" />
+=======
+        <activity
+            android:name=".demented.CarrierLabel"
+            android:label="@string/custom_carrier_label_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+        </activity>
+
+>>>>>>> 9a3db15... port status bar weekday options(working) and custom carrier label(WIP, options not shown in settings until fixed)
     </application>
 </manifest>
