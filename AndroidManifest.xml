@@ -1588,10 +1588,9 @@
             </intent-filter>
         </activity>
 
-<<<<<<< HEAD
         <service android:name=".projectelite.ExternalCommandService"
             android:exported="false" />
-=======
+
         <activity
             android:name=".demented.CarrierLabel"
             android:label="@string/custom_carrier_label_title" >
@@ -1602,6 +1601,5 @@
             </intent-filter>
         </activity>
 
->>>>>>> 9a3db15... port status bar weekday options(working) and custom carrier label(WIP, options not shown in settings until fixed)
     </application>
 </manifest>
