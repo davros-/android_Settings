@@ -19,6 +19,7 @@ package com.android.settings;
 import android.app.ActivityManagerNative;
 
 import com.android.settings.bluetooth.DockEventReceiver;
+import com.android.settings.Utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -243,8 +244,14 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.LOCKSCREEN_SOUNDS_ENABLED, 1) != 0);
 
         mVolBtnMusicCtrl = (CheckBoxPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
-        mVolBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
-                Settings.System.VOLBTN_MUSIC_CONTROLS, 1) != 0);
+        if (mVolBtnMusicCtrl != null) {
+            if (!Utils.hasVolumeRocker(getActivity())) {
+                getPreferenceScreen().removePreference(mVolBtnMusicCtrl);
+            } else {
+                mVolBtnMusicCtrl.setChecked(Settings.System.getInt(resolver,
+                        Settings.System.VOLBTN_MUSIC_CONTROLS, 1) != 0);
+            }
+        }
 
         mHeadsetConnectPlayer = (CheckBoxPreference) findPreference(KEY_HEADSET_CONNECT_PLAYER);
         mHeadsetConnectPlayer.setChecked(Settings.System.getInt(resolver,
