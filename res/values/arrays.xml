@@ -1465,14 +1465,6 @@
         <item>2</item>
     </string-array>
 
-
-    <!--- Volume key cursor control -->
-    <string-array name="volume_key_cursor_control_entries">
-        <item>@string/volume_key_cursor_control_off</item>
-        <item>@string/volume_key_cursor_control_on</item>
-        <item>@string/volume_key_cursor_control_on_reverse</item>
-    </string-array>
-
     <!-- Expanded desktop -->
     <string-array name="expanded_desktop_entries" translatable="false">
         <item>@string/expanded_desktop_disabled</item>
