@@ -1470,6 +1470,7 @@
 
         <activity android:name=".cyanogenmod.PowerMenu" />
 
+<<<<<<< HEAD
         <activity android:name=".aokp.StatusBarBattery" />
 
         <activity android:name=".demented.CarrierLabel" />
@@ -1483,6 +1484,11 @@
         <activity android:name=".aokp.SeekBarPreference" />
 
         <activity android:name=".aokp.TouchInterceptor" />
+=======
+        <activity android:name=".paranoid.Pie" />
+
+        <activity android:name=".paranoid.PieColor" />
+>>>>>>> 60e0684... PIE: everything for PIE in settings
 
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
