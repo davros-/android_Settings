@@ -1498,8 +1498,7 @@
         <item>2</item>
     </string-array>
 
-    </string-array>
-
+    <!-- Pie stuff -->
     <string-array name="entries_pie_gravity">
         <item>@string/pie_gravity_left</item>
         <item>@string/pie_gravity_top</item>
