@@ -1082,8 +1082,6 @@
         <item>0</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD AND Droid Concepts EDITS END **** -->
-
     <string-array name="entries_status_bar_am_pm">
         <item>Normal</item>
         <item>Small</item>
@@ -1203,8 +1201,6 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-
-    <!-- **** CYANOGENMOD/Droid Concepts EDITS END **** -->
 
     <!--- Volume key cursor control -->
     <string-array name="volume_key_cursor_control_entries">
@@ -1469,15 +1465,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD ADDITIONS END **** -->
-
-    <string-array name="all_color_style_entries" translatable="false">
-        <item>@string/all_color</item>
-        <item>@string/stock_color</item>
-    </string-array>
-    <string-array name="all_color_style_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
 
     <!--- Volume key cursor control -->
     <string-array name="volume_key_cursor_control_entries">
@@ -1499,6 +1486,14 @@
     </string-array>
 
     <!-- Pie stuff -->
+    <string-array name="all_color_style_entries" translatable="false">
+        <item>@string/all_color</item>
+        <item>@string/stock_color</item>
+    </string-array>
+    <string-array name="all_color_style_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+
     <string-array name="entries_pie_gravity">
         <item>@string/pie_gravity_left</item>
         <item>@string/pie_gravity_top</item>
