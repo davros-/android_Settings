@@ -37,7 +37,6 @@
 
   <PreferenceScreen
         android:key="pie_control"
-        android:icon="@drawable/ic_settings_pie"
         android:fragment="com.android.settings.paranoid.Pie"
         android:title="@string/pie_controls_title"
         android:summary="@string/pie_controls_summary" />
@@ -58,21 +57,11 @@
     </PreferenceScreen>
 
     <PreferenceScreen
-        android:id="@+id/statusbar_toggles"
-        android:title="@string/qs_title"
-        android:fragment="com.android.settings.projectelite.StatusBarToggles" />
-
-    <PreferenceScreen
         android:id="@+id/statusbar_battery"
         android:title="@string/header_summary_battery"
         android:fragment="com.android.settings.aokp.StatusBarBattery" />
 
-    <PreferenceScreen
-        android:id="@+id/nav_bar"
-        android:fragment="com.android.settings.aokp.Navbar"
-        android:title="@string/title_navbar"
-        android:summary="@string/header_summary_navbar" />
-
+ 
     <!-- WORK IN PROGRESS...
     <Preference
         android:key="custom_carrier_label"
