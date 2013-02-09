@@ -1436,7 +1436,6 @@
         />
 
         <!-- CyanogenMod and Droid Concepts activities Start -->
-        <activity android:name=".cyanogenmod.SystemSettings" />
 
         <activity android:name=".cyanogenmod.PerformanceSettings" />
 
@@ -1608,17 +1607,6 @@
 
         <service android:name=".projectelite.ExternalCommandService"
             android:exported="false" />
-
-        <activity
-            android:name=".demented.CarrierLabel"
-            android:label="@string/custom_carrier_label_title" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="com.android.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".aokp.Navbar"
