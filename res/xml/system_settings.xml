@@ -61,24 +61,7 @@
         android:title="@string/header_summary_battery"
         android:fragment="com.android.settings.aokp.StatusBarBattery" />
 
-<<<<<<< HEAD
- 
-    <!-- WORK IN PROGRESS...
-=======
-    <PreferenceScreen
-        android:id="@+id/nav_bar"
-        android:fragment="com.android.settings.aokp.Navbar"
-        android:title="@string/title_navbar"
-        android:summary="@string/header_summary_navbar" />
-
-  <PreferenceScreen
-        android:key="pie_control"
-        android:fragment="com.android.settings.paranoid.Pie"
-        android:title="@string/pie_controls_title"
-        android:summary="@string/pie_controls_summary" />
-
     <!-- Custom Carrier Label -->
->>>>>>> 31ea47f... changes for custom carrier label, working but currently fc's when OK in dialog is selected, to be fixed
     <Preference
         android:key="custom_carrier_label"
         android:title="@string/custom_carrier_label_title" />  
