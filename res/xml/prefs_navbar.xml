@@ -56,11 +56,6 @@
                 android:summary="@string/navigation_bar_colorall_summary" />
 
         <CheckBoxPreference
-                android:key="navigation_bar_allcolor"
-                android:title="@string/navigation_bar_colorall_title"
-                android:summary="@string/navigation_bar_colorall_summary" />
-
-        <CheckBoxPreference
                 android:key="navigation_bar_menu_arrow_keys"
                 android:title="@string/navigation_bar_menu_arrow_keys_title"
                 android:summary="@string/navigation_bar_menu_arrow_keys_summary" />
