@@ -5067,6 +5067,10 @@
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for rebooting into recovery or bootloader</string>
+
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 
     <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
