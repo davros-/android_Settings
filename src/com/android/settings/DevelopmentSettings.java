@@ -140,13 +140,9 @@ public class DevelopmentSettings extends PreferenceFragment
 
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
 
-<<<<<<< HEAD
-=======
-    private static final String DEVELOPMENT_TOOLS = "development_tools";
 
     private static final String ADVANCED_REBOOT_KEY = "advanced_reboot";
 
->>>>>>> 99ea39b... Settings: Add Advanced reboot (1 of 2)
     private static final int RESULT_DEBUG_APP = 1000;
 
     private IWindowManager mWindowManager;
@@ -507,11 +503,7 @@ public class DevelopmentSettings extends PreferenceFragment
             }
         }
         resetDebuggerOptions();
-<<<<<<< HEAD
-=======
-        resetRootAccessOptions();
         resetAdvancedRebootOptions();
->>>>>>> 99ea39b... Settings: Add Advanced reboot (1 of 2)
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
