@@ -5559,4 +5559,7 @@
     <string name="demented_advanced">Advanced Options</string>
     <string name="demented_crt">CRT Animation</string>
     <string name="demented_general">General Settings</string>
+
+    <!-- TRDS Settings -->
+    <string name="trds_settings_title">Dark Project Elite</string>
 </resources>
