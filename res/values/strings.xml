@@ -5081,8 +5081,6 @@
     <string name="lockscreen_background_custom_image">Custom image</string>
     <string name="lockscreen_background_default_wallpaper">Default wallpaper</string>
 
-<<<<<<< HEAD
-=======
     <!-- Safe headset volume restore checkbox -->
     <string name="safe_headset_volume_title">Safe headset volume</string>
     <string name="safe_headset_volume_summary">Prevent loud volume levels when headset is first plugged in</string>
@@ -5099,9 +5097,6 @@
     <string name="pie_control_trigger_right">Right screen border</string>
     <string name="pie_control_trigger_top">Top screen border</string>
     <string name="pie_control_trigger_top_summary">Only navigation will be displayed at top</string>
-
->>>>>>> 3d61178... Settings: port CM pie control
-    <!-- **** CYANOGENMOD ADDITIONS END **** -->
 
     <string name="volume_adjust_sounds_enable_title">Volume adjust sound</string>
 

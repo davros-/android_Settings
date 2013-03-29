@@ -55,16 +55,6 @@
         android:title="@string/header_summary_battery"
         android:fragment="com.android.settings.aokp.StatusBarBattery" />
 
-<<<<<<< HEAD
-=======
-    <PreferenceScreen
-
-        android:id="@+id/nav_bar"
-        android:fragment="com.android.settings.aokp.Navbar"
-        android:title="@string/title_navbar"
-        android:summary="@string/header_summary_navbar" />
-
->>>>>>> 3d61178... Settings: port CM pie control
     <!-- Custom Carrier Label -->
     <Preference
         android:key="custom_carrier_label"
