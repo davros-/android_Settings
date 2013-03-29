@@ -35,12 +35,6 @@
         android:title="@string/title_navbar"
         android:summary="@string/header_summary_navbar" />
 
-  <PreferenceScreen
-        android:key="pie_control"
-        android:fragment="com.android.settings.paranoid.Pie"
-        android:title="@string/pie_controls_title"
-        android:summary="@string/pie_controls_summary" />
-
     <PreferenceScreen
         android:key="power_menu"
         android:title="@string/power_menu_title"
@@ -61,15 +55,6 @@
         android:title="@string/header_summary_battery"
         android:fragment="com.android.settings.aokp.StatusBarBattery" />
 
-<<<<<<< HEAD
-=======
-    <PreferenceScreen
-        android:id="@+id/nav_bar"
-        android:fragment="com.android.settings.aokp.Navbar"
-        android:title="@string/title_navbar"
-        android:summary="@string/header_summary_navbar" />
-
->>>>>>> 885edc0... Settings: revert all PA Pie control 1/2
     <!-- Custom Carrier Label -->
     <Preference
         android:key="custom_carrier_label"
