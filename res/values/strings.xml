@@ -5248,7 +5248,11 @@
     <string name="multipane_ui_summary">This will Enable/Disable Dual panel view (Reboot Required!)</string>
 
     <!-- Statusbar and NavBar Opacity Slider -->
+<<<<<<< HEAD
     <string name="navigation_bar_alpha_title">Status Bar and NavBar opacity</string>
+=======
+    <string name="navigation_bar_alpha_title">Set the NavBar and status bar opacity</string>
+>>>>>>> 885edc0... Settings: revert all PA Pie control 1/2
 
     <!-- Menu Overflow -->
     <string name="show_overflow_title">Show Menu UI Overflow</string>

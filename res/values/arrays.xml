@@ -1482,6 +1482,7 @@
         <item>2</item>
     </string-array>
 
+<<<<<<< HEAD
     <!-- Pie stuff -->
     <string-array name="all_color_style_entries" translatable="false">
         <item>@string/all_color</item>
@@ -1562,6 +1563,8 @@
         <item>3.0</item>
     </string-array>
 
+=======
+>>>>>>> 885edc0... Settings: revert all PA Pie control 1/2
     <!-- Quick pulldown -->
     <string-array name="quick_pulldown_entries" translatable="false">
         <item>@string/quick_pulldown_off</item>
