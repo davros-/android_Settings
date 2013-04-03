@@ -17,8 +17,6 @@
 package com.android.settings.cyanogenmod;
 
 import android.app.AlertDialog;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.content.ContentResolver;
@@ -45,6 +43,7 @@ import android.text.Spannable;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.IWindowManager;
+import android.view.WindowManagerGlobal;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,11 +83,15 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     private static final String KEY_MISSED_CALL_BREATH = "missed_call_breath";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_MMS_BREATH = "mms_breath";
+    private static final String KEY_EXPANDED_DESKTOP = "expanded_desktop";
+    private static final String KEY_EXPANDED_DESKTOP_NO_NAVBAR = "expanded_desktop_no_navbar";
 
     private PreferenceScreen mPieControl;
     private ListPreference mLowBatteryWarning;
     private static ContentResolver mContentResolver;
     private CheckBoxPreference mMMSBreath;
+    private ListPreference mExpandedDesktopPref;
+    private CheckBoxPreference mExpandedDesktopNoNavbarPref;
 
     CheckBoxPreference mShowActionOverflow;
     Preference mCustomLabel;
@@ -166,6 +169,29 @@ public class SystemSettings extends SettingsPreferenceFragment implements
 
         mDualpane = (CheckBoxPreference) findPreference(PREF_FORCE_DUAL_PANEL);
             mDualpane.setOnPreferenceChangeListener(this);
+
+        // Expanded desktop
+        mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);
+        mExpandedDesktopNoNavbarPref = (CheckBoxPreference) findPreference(KEY_EXPANDED_DESKTOP_NO_NAVBAR);
+
+        int expandedDesktopValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.EXPANDED_DESKTOP_STYLE, 0);
+
+        // Hide no-op "Status bar visible" mode on devices without navbar
+        try {
+            if (WindowManagerGlobal.getWindowManagerService().hasNavigationBar()) {
+                mExpandedDesktopPref.setOnPreferenceChangeListener(this);
+                mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
+                updateExpandedDesktop(expandedDesktopValue);
+                prefScreen.removePreference(mExpandedDesktopNoNavbarPref);
+            } else {
+                mExpandedDesktopNoNavbarPref.setOnPreferenceChangeListener(this);
+                mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
+                prefScreen.removePreference(mExpandedDesktopPref);
+            }
+        } catch (RemoteException e) {
+            Log.e(TAG, "Error getting navigation bar status");
+        }
 
         // Only show the hardware keys config on a device that does not have a navbar
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
@@ -283,6 +309,14 @@ public class SystemSettings extends SettingsPreferenceFragment implements
          } else if (preference == mShowWifiName) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.NOTIFICATION_SHOW_WIFI_SSID,
                     ((CheckBoxPreference)preference).isChecked() ? 0 : 1);
+            return true;
+         } else if (preference == mExpandedDesktopPref) {
+            int expandedDesktopValue = Integer.valueOf((String) objValue);
+            updateExpandedDesktop(expandedDesktopValue);
+            return true;
+         } else if (preference == mExpandedDesktopNoNavbarPref) {
+            boolean value = (Boolean) objValue;
+            updateExpandedDesktop(value ? 2 : 0);
             return true;
          } else if (preference == mCrtMode) {
             int crtMode = Integer.valueOf((String) objValue);
@@ -538,6 +572,31 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         private void saveSavedLinkedState(boolean v) {
             getActivity().getSharedPreferences("transparency", Context.MODE_PRIVATE).edit()
                     .putBoolean("link", v).commit();
+        }
+    }
+
+    private void updateExpandedDesktop(int value) {
+        ContentResolver cr = getContentResolver();
+        Resources res = getResources();
+        int summary = -1;
+
+        Settings.System.putInt(cr, Settings.System.EXPANDED_DESKTOP_STYLE, value);
+
+        if (value == 0) {
+            // Expanded desktop deactivated
+            Settings.System.putInt(cr, Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 0);
+            Settings.System.putInt(cr, Settings.System.EXPANDED_DESKTOP_STATE, 0);
+            summary = R.string.expanded_desktop_disabled;
+        } else if (value == 1) {
+            Settings.System.putInt(cr, Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
+            summary = R.string.expanded_desktop_status_bar;
+        } else if (value == 2) {
+            Settings.System.putInt(cr, Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED, 1);
+            summary = R.string.expanded_desktop_no_status_bar;
+        }
+
+        if (mExpandedDesktopPref != null && summary != -1) {
+            mExpandedDesktopPref.setSummary(res.getString(summary));
         }
     }
 }
