@@ -105,6 +105,7 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
+    </header>
 
     <!-- About -->
     <header
@@ -112,7 +113,6 @@
         android:icon="@drawable/ic_settings_demented"
 	android:fragment="com.android.settings.demented.About"
 	android:title="@string/about_demented" />
-    </header>
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
