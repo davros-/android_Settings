@@ -31,7 +31,7 @@ public class About extends SettingsPreferenceFragment {
         if (preference == mSiteUrl) {
             launchUrl("http://www.droidconcepts.com/");
         } else if (preference == mSourceUrl) {
-            launchUrl("https://github.com/cphelps76");
+            launchUrl("https://github.com/davros-");
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
