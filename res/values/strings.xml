@@ -5294,4 +5294,9 @@
     <string name="about_demented">About Droid Concepts</string>
     <string name="about_demented_summary">@null</string>
 
+   <!-- Wifi network name in notifiacation drawer -->
+   <string name="notification_show_wifi_ssid_title">Show Wifi network name</string>
+   <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
+   <string name="statusbar_header">StatusBar &amp; Notification Drawer</string>
+
 </resources>
