@@ -61,34 +61,25 @@
         android:title="@string/notification_shortcuts_settings_title"
         android:summary="@string/notification_shortcuts_settings_summary" />
 
-<<<<<<< HEAD
     <ListPreference
         android:key="pref_low_battery_warning_policy"
         android:title="@string/pref_low_battery_warning_policy_title"
         android:entries="@array/pref_low_battery_warning_policy_entries"
         android:entryValues="@array/pref_low_battery_warning_policy_values"
         android:defaultValue="3" />
-=======
+
     <Preference
         android:fragment="com.android.settings.demented.NotificationDrawerStyle"
         android:key="notification_style"
         android:title="@string/notification_style_title"
         android:summary="@string/notification_style_summary" />
->>>>>>> 5e39b01... Settings: Notification drawer wallpaper picker with alpha slider (2/2)
 
     <PreferenceScreen
         android:id="@+id/statusbar_battery"
         android:title="@string/header_summary_battery"
         android:fragment="com.android.settings.aokp.StatusBarBattery" />
 
-<<<<<<< HEAD
     <!-- Custom Carrier Label -->
-=======
-    <PreferenceScreen
-        android:id="@+id/nav_bar"
-        android:fragment="com.android.settings.aokp.Navbar"
-        android:title="@string/title_navbar"
-        android:summary="@string/header_summary_navbar" />
 
     <ListPreference
         android:key="pref_low_battery_warning_policy"
@@ -97,7 +88,6 @@
         android:entryValues="@array/pref_low_battery_warning_policy_values"
         android:defaultValue="3" />
 
->>>>>>> 5e39b01... Settings: Notification drawer wallpaper picker with alpha slider (2/2)
     <Preference
         android:key="custom_carrier_label"
         android:title="@string/custom_carrier_label_title" /> 
