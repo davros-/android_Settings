@@ -50,11 +50,6 @@
     </PreferenceScreen>
 
     <PreferenceScreen
-        android:id="@+id/statusbar_toggles"
-        android:title="@string/qs_title"
-        android:fragment="com.android.settings.projectelite.StatusBarToggles" />
-
-    <PreferenceScreen
         android:id="@+id/demented_notification_shortcuts"
         android:fragment="com.android.settings.demented.notificationshortcuts.NotificationShortcuts"
         android:key="demented_shortcuts_settings"
@@ -80,13 +75,6 @@
         android:fragment="com.android.settings.aokp.StatusBarBattery" />
 
     <!-- Custom Carrier Label -->
-
-    <ListPreference
-        android:key="pref_low_battery_warning_policy"
-        android:title="@string/pref_low_battery_warning_policy_title"
-        android:entries="@array/pref_low_battery_warning_policy_entries"
-        android:entryValues="@array/pref_low_battery_warning_policy_values"
-        android:defaultValue="3" />
 
     <Preference
         android:key="custom_carrier_label"
