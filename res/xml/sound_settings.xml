@@ -53,9 +53,9 @@
 
     <!-- Volume Safe Set -->
      <CheckBoxPreference
-            android:key="safe_headset_restore"
-            android:title="@string/safe_headset_restore_title"
-            android:summary="@string/safe_headset_restore_summary"
+            android:key="safe_headset_volume"
+            android:title="@string/safe_headset_volume_title"
+            android:summary="@string/safe_headset_volume_summary"
             android:defaultValue="true" />
 
     <PreferenceCategory
