@@ -21,3 +21,4 @@
     <solid android:color="#00000000" />
     <stroke android:color="#40ffffff" android:width="2dp" />
 </shape>
+</resources>

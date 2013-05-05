@@ -5563,4 +5563,7 @@
 
     <!-- TRDS Settings -->
     <string name="trds_settings_title">Dark Side UI</string>
+
+    <!--- NFC -->
+    <string name="toggleNfc">NFC</string>
 </resources>
