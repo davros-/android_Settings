@@ -101,7 +101,6 @@
                    android:title="@string/width_land_title" />
 
         </PreferenceCategory>
-
         <PreferenceCategory
             android:key="navbar_widgets_cat"
             android:title="@string/navbar_widgets">
