@@ -332,10 +332,6 @@ public class Navbar extends AOKPPreferenceFragment implements
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
             Helpers.restartSystemUI();
             return true;
-        } else if (preference == mColorizeAllIcons) {
-            Settings.System.putBoolean(mContentRes,
-                    Settings.System.NAVIGATION_BAR_ALLCOLOR,
-                    ((CheckBoxPreference) preference).isChecked() ? true : false);
         } else if (preference == mConfigureWidgets) {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             WidgetConfigurationFragment fragment = new WidgetConfigurationFragment();
