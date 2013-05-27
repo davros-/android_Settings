@@ -1733,6 +1733,7 @@
         <item>@string/hardware_keys_action_nothing</item>
         <item>@string/hardware_keys_action_home</item>
         <item>@string/hardware_keys_action_back</item>
+        <item>@string/hardware_keys_action_camera</item>
         <item>@string/hardware_keys_action_menu</item>
         <item>@string/hardware_keys_action_app_switch</item>
         <item>@string/hardware_keys_action_search</item>
@@ -1763,6 +1764,7 @@
         <item>12</item>
         <item>13</item>
         <item>14</item>
+        <item>15</item>
     </string-array>
 
     <!-- Expanded desktop -->
