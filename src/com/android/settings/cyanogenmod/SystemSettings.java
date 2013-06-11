@@ -141,8 +141,8 @@ public class SystemSettings extends SettingsPreferenceFragment implements
                 Settings.System.SYSTEM_POWER_CRT_MODE, crtMode)));
         mCrtMode.setOnPreferenceChangeListener(this);
 
-         mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
-         mMissedCallBreath.setChecked(Settings.System.getInt(getContentResolver(),
+        mMissedCallBreath = (CheckBoxPreference) findPreference(KEY_MISSED_CALL_BREATH);
+        mMissedCallBreath.setChecked(Settings.System.getInt(resolver,
                 Settings.System.MISSED_CALL_BREATH, 0) == 1);
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
