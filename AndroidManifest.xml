@@ -1578,6 +1578,8 @@
 
         <activity android:name=".notificationlight.BatteryLightSettings" />
 
+        <!-- CyanogenMod activities End -->
+
         <activity
                 android:label="@string/qs_title"
                 android:name=".TwinBlade.quicksettingscontrolpanel">
@@ -1738,15 +1740,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".demented.Installer"
-            android:label="@string/persistance">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="com.android.settings.SHORTCUT" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".demented.StatusBarToggles"
