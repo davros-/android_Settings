@@ -101,6 +101,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mShowWifiName;
     CheckBoxPreference mDualpane;
     CheckBoxPreference mMissedCallBreath;
+    CheckBoxPreference mSMSBreath;
 
     private boolean torchSupported() {
         return getResources().getBoolean(R.bool.has_led_flash);
@@ -146,8 +147,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
             mMissedCallBreath.setOnPreferenceChangeListener(this);
 
         mSMSBreath = (CheckBoxPreference) findPreference(KEY_SMS_BREATH);
-        mSMSBreath.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.SMS_BREATH, 0) == 1);
+            mSMSBreath.setOnPreferenceChangeListener(this);
 
         mShowWifiName = (CheckBoxPreference) findPreference(PREF_NOTIFICATION_SHOW_WIFI_SSID);
             mShowWifiName.setOnPreferenceChangeListener(this);
@@ -274,6 +274,10 @@ public class SystemSettings extends SettingsPreferenceFragment implements
             return true;
          } else if (preference == mMissedCallBreath) {
             Settings.System.putInt(getActivity().getContentResolver(), Settings.System.MISSED_CALL_BREATH,
+                    ((CheckBoxPreference)preference).isChecked() ? 0 : 1);
+            return true;
+         } else if (preference == mSMSBreath) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.SMS_BREATH,
                     ((CheckBoxPreference)preference).isChecked() ? 0 : 1);
             return true;
          } else if (preference == mShowWifiName) {
