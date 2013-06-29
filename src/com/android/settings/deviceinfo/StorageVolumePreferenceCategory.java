@@ -314,6 +314,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
             if (map.containsKey(key)) {
                total += map.get(key);
         }
+    }
         return total;
     }
 
