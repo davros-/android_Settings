@@ -21,6 +21,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
@@ -115,6 +116,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.system_settings);
+        PreferenceScreen prefScreen = getPreferenceScreen();
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
