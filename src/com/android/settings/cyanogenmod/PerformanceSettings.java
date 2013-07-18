@@ -51,11 +51,19 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
     private static final String DISABLE_BOOTANIMATION_DEFAULT = "0";
 
+    private static final String DISABLE_WALLPAPER_PREF = "pref_disable_wallpaperservice";
+
+    private static final String DISABLE_WALLPAPER_PERSIST_PROP = "persist.sys.wallpaperservice";
+
+    private static final String DISABLE_WALLPAPER_DEFAULT = "1";
+
     private ListPreference mUseDitheringPref;
 
     private CheckBoxPreference mUse16bppAlphaPref;
 
     private CheckBoxPreference mDisableBootanimPref;
+
+    private CheckBoxPreference mDisableWallpaperPref;
 
     private AlertDialog alertDialog;
 
@@ -85,6 +93,12 @@ public class PerformanceSettings extends SettingsPreferenceFragment
                     DISABLE_BOOTANIMATION_DEFAULT);
             mDisableBootanimPref.setChecked("1".equals(disableBootanimation));
 
+            mDisableWallpaperPref = (CheckBoxPreference) prefSet
+                    .findPreference(DISABLE_WALLPAPER_PREF);
+            String disableWallpaper = SystemProperties.get(DISABLE_WALLPAPER_PERSIST_PROP,
+                    DISABLE_WALLPAPER_DEFAULT);
+            mDisableWallpaperPref.setChecked("0".equals(disableWallpaper));
+
             /* Display the warning dialog */
             alertDialog = new AlertDialog.Builder(getActivity()).create();
             alertDialog.setTitle(R.string.performance_settings_warning_title);
@@ -109,6 +123,9 @@ public class PerformanceSettings extends SettingsPreferenceFragment
         } else if (preference == mDisableBootanimPref) {
             SystemProperties.set(DISABLE_BOOTANIMATION_PERSIST_PROP,
                     mDisableBootanimPref.isChecked() ? "1" : "0");
+        } else if (preference == mDisableWallpaperPref) {
+            SystemProperties.set(DISABLE_WALLPAPER_PERSIST_PROP,
+                    mDisableWallpaperPref.isChecked() ? "0" : "1");
         } else {
             // If we didn't handle it, let preferences handle it.
             return super.onPreferenceTreeClick(preferenceScreen, preference);

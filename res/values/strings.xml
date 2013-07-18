@@ -5624,4 +5624,7 @@
     <string name="lockscreen_buttons_camera">Launch camera</string>
     <string name="lockscreen_buttons_power_off">Power off</string>
 
+    <string name="pref_disable_wallpaperservice_title">Disable wallpaper service</string>
+    <string name="pref_disable_wallpaperservice_summary">Disable wallpaper to reduce SystemUI memory usage (requires reboot)</string>
+
 </resources>
